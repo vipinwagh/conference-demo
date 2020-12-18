@@ -37,12 +37,7 @@ public class SessionsController {
         sessionRepository.deleteById(id);
     }
 
-    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
-    public Session update(@PathVariable Long id, Session session) {
-        Session existingSession = sessionRepository.getOne(id);
-        BeanUtils.copyProperties(session, existingSession, "session_id");
-        return sessionRepository.saveAndFlush(existingSession);
-    }
+
 
 
 }
